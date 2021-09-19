@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/src/signup.dart';
+import 'configtimer.dart';
 
-//void main() => runApp(const SignUp());
-
-class SignUp extends StatelessWidget {
-  const SignUp({Key? key}) : super(key: key);
+class Login extends StatelessWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +44,7 @@ class MyCustomForm extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
-          child: const TextField(
-            decoration: const InputDecoration(
-              filled: true,
-              fillColor: Color(0xFFFFFFFF),
-              border: OutlineInputBorder(),
-              hintText: 'Email',
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+          padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
           child: const TextField(
             decoration: const InputDecoration(
               filled: true,
@@ -65,26 +54,32 @@ class MyCustomForm extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-          child: const TextField(
-            decoration: const InputDecoration(
-              filled: true,
-              fillColor: Color(0xFFFFFFFF),
-              border: OutlineInputBorder(),
-              hintText: 'Confirm Password',
-            ),
-          ),
-        ),
         ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: StadiumBorder(),
               primary: Color(0xFFCA4A4A), // background
-              onPrimary: Color(0xFFFFFFF),
-              minimumSize: Size(200, 55), // foreground
+              onPrimary: Color(0xFFFFFFF), // foreground
+              minimumSize: Size(200, 55),
             ),
-            child: Text('Sign Up', style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 30)),
-            onPressed: () {},
+            child: Text('Login', style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 30)),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyForm()),
+              );
+            },
+          ),
+        TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            child: Text("Don't have an account? Sign up!", style: TextStyle(color: Color(0xFF498ECE), fontSize: 15)),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SignUp()),
+              );
+            },
           ),
       ],
     );
