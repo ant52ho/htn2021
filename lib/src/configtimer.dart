@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'timer.dart';
 
 class MyForm extends StatelessWidget {
   @override
@@ -42,7 +43,12 @@ class MyCustomForm extends StatelessWidget {
                 minimumSize: Size(200, 55),
               ),
               child: Text('Ready!', style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 30)),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyHomePage()),
+              );
+              },
             ),
           )
         ],

@@ -38,7 +38,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Timer App"),
+          centerTitle: true,
+          backgroundColor: Color(0xFFCA4A4A),
+          title: Text("Pomodurance"),
       ),
       body: Center(
         child: Column(
